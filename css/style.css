@@ -1,0 +1,282 @@
+/* cssのリセット */
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p,
+form, input, div {
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================== */
+body{
+    padding:0 0 0 0;
+    background-color: #EEEEEE;
+}
+/* ヘッダー================================== */
+header {
+    background-color:rgb(109, 233, 146);
+    height:90px;
+    color:white;
+
+}
+.header{
+    display: inline-block;
+}
+header h1 {
+    position: relative;
+    top:20px;
+    left:40px;
+}
+/* モーダルウインドウ */
+#open{
+    cursor: pointer;
+    position: relative;
+    top:20px;
+    left:60px;
+    padding:20px;
+}
+#closed{
+    cursor: pointer;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    padding: 12px 0;
+    margin: 16px auto 0;
+    z-index: 3;
+    color:black;
+}
+#mask{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+#mordal{
+    background:#fff;
+    width:60%;
+    padding:20px;
+    border-radius:4px;
+    position: absolute;
+    top:40px;
+    left:0px;
+    right:0;
+    margin:auto;
+    z-index: 3;
+
+}
+#mordal p{
+    z-index: 3;
+    color:black;
+    text-align: center;
+}
+.hidden{
+    display: none;
+}
+
+
+/* メイン（地図）================================== */
+body main {
+    margin:10px;
+}
+#up_main{
+    display: flex;
+}
+.main_area{
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+    /* height:600px; */
+}
+#gmap{
+    width:60%;
+    height:600px;
+    margin:10 10 0 0;
+}
+/* メイン（経路検索）--------------------------------- */
+#tate{
+    display: flex;
+    flex-direction: column;
+}
+
+#direction {
+    width:130%;
+    border:solid 5px rgb(5, 35, 134);
+    border-radius: 10px;
+}
+
+#direction h3{
+    font-size:40px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+/* 経路検索メイン */
+table td{
+    padding:10px;
+}
+.tr_dire{
+    border:solid 2px rgb(99, 160, 86);
+    border-radius: 10px;
+}
+.user-place{
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+}
+/* ------------------------------ */
+#direction p{
+    font-size:20px;
+    text-align: center;
+    padding: 30px;
+}
+.tri_way{
+    position: relative;
+    text-align: center;
+}
+#scerch_btn{
+    text-align: center;
+    padding:20px;
+}
+
+#scrach_direction{
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    background: #ef454a;
+    box-shadow: 0 4px 0 #d1483e;
+    border-radius: 16px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    user-select: none;
+    outline: none;
+}
+
+#result_btn{
+    width:130%;
+    text-align: center;
+    padding:40px;
+}
+#Id_result{
+    cursor: pointer;
+    width: 120px;
+    height: 60px;
+    background: #9c4df7;
+    box-shadow: 0 4px 0 #4c2086;
+    border-radius: 30px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    user-select: none;
+    outline: none;
+}
+
+
+#scrach_direction:hover,#Id_result:hover{
+    opacity: 0.8;
+}
+#scrach_direction:active,#Id_result:active{
+    box-shadow: none;
+    transform: translate3d(0, 3px, 0);
+}
+/* メイン（結果表示）--------------------------------- */
+    /* summaryの表示 */
+    #summary_area{
+        text-align: center;
+        display:none;
+        width:70%;
+        margin:auto;
+        margin-bottom: 20px;
+        height:100px;
+        border:solid 8px rgb(5, 134, 134);
+        border-radius: 20px;
+        /* padding-bottom:30px; */
+    }
+    #summary_res{
+        display: inline-block;
+        text-align: left;
+        font-size:30px;
+        /* font-family: 'Courier New', Courier, monospace; */
+    }
+    .adp-summary{
+        text-align: center;
+        display: none;
+    }
+.result_ele{
+    height:auto;
+    overflow:hidden;
+    display: inline-block;
+    vertical-align: top;
+    padding: 30px;
+    width:20%;
+    border:solid 5px rgb(44, 63, 236);
+    background-color: rgb(158, 189, 248);
+    border-radius: 10px;
+}
+.result_ele_high{
+    height:auto;
+    overflow:hidden;
+    display: inline-block;
+    vertical-align: top;
+    padding:30px;
+    width:20%;
+    border:solid 5px rgb(6, 114, 6);
+    background-color: rgb(154, 250, 151);
+    border-radius: 10px;
+
+}
+.cl_hr{
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+.adp-stepicon{
+    font-size: 80px;
+}
+
+/* ================================== */
+
+.adp-distance{
+    display: none;
+}
+
+#addmap_btn{
+    cursor: pointer;
+    width: 130px;
+    height: 32px;
+    background: #f8f548;
+    box-shadow: 0 4px 0 #998c12;
+    border-radius: 16px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 14px;
+    color: "black";
+    user-select: none;
+    outline: none;
+}
+
+.addmap{
+    display: inline-block;
+    width:90%;
+    height:200px;
+    padding:20px 0 0 0 ;
+}
+#addmapID{
+    display: inline-block;
+    width:90%;
+    height:200px;
+    padding:20px 0 0 0 ;
+}
+/* 
+body footer{
+    display: none;
+} */
