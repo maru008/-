@@ -157,6 +157,13 @@ function in_nowPlace(){
     const now_start = document.getElementById("start_dir");
     now_start.value = "現在地";
 }
+
+//ページ更新
+function page_reset(){
+    window.location.reload();
+}
+
+
 //返しのHTML要素結果
 
 function result_panel(){

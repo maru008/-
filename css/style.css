@@ -156,6 +156,21 @@ table td{
     outline: none;
 }
 
+#reset_btn{
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    background: #06d339;
+    box-shadow: 0 4px 0 #08460b;
+    border-radius: 16px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    user-select: none;
+    outline: none;
+}
+
 #result_btn{
     width:130%;
     text-align: center;
@@ -276,7 +291,7 @@ table td{
     height:200px;
     padding:20px 0 0 0 ;
 }
-/* 
+
 body footer{
     display: none;
-} */
+}

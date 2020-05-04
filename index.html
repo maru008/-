@@ -43,16 +43,19 @@
                         <p>移動手段</p>
                         <form id ="tri_way">
                             <input type = "radio" name = "tri_way" value="DRIVING"　checked>車
-                            <input type = "radio" name = "tri_way" value="BICYCLING">自転車
-                            <input type = "radio" name = "tri_way" value="TRANSIT">公共交通機関
+                            <!-- <input type = "radio" name = "tri_way" value="BICYCLING">自転車
+                            <input type = "radio" name = "tri_way" value="TRANSIT">公共交通機関 -->
                             <input type = "radio" name = "tri_way" value="WALKING">徒歩<br>
                         </form>
                         <div id = "scerch_btn">
-                            <input type="button" id = "scrach_direction" value = "経路検索" onclick="scrach_dire()">
+                            <input type="button" id = "scrach_direction" value = "経路検索" onclick="disabled = true;scrach_dire()">
+                        </div>
+                        <div id = "scerch_btn">
+                            <input type="button" id = "reset_btn" value = "リセット" onclick="page_reset()">
                         </div>
                     </div>
                     <div class = "main_area" id = "result_btn">
-                        <input type = "button" id = "Id_result"  value = "詳細結果の表示" onclick="result_panel()">
+                        <input type = "button" id = "Id_result"  value = "詳細結果の表示" onclick="disabled = true;result_panel()">
                     </div>
                 </div>
             </div>
@@ -63,7 +66,7 @@
                 </div>
             </div>
         </main>
-        <!-- <footer>
+        <footer>
             <h2>CSSの雛形検証</h2>
                 <div class = "result_ele_high">
                         <tr data-leg-index="0" data-step-index="11" jstcache="60" jsaction="directionsPanel.selectLegAndStep" jsinstance="11" class="result_ele_high">
@@ -84,7 +87,7 @@
                     <hr class = "cl_hr">
                     <div id = "addmapID" class = "addmap"></div>
                 </div>
-        </footer> -->
+        </footer>
         <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDG64oCzyrDajPz3qxSJEiCnnPOp8TjeKc&callback=initMap&language=ja" async defer></script>
         <script src="js/mordal.js"></script>
     </body>
