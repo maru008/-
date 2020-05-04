@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang= "ja">
+    <head>
+        <meta charset = "utf-8">
+        <title>ドライブ交差点マップ</title>
+        <link rel = "stylesheet" href="css/style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1 class = "header">ドライブ交差点マップ</h1>
+                <div class = "header" id = "open">このサイトについて</div>
+                <div id = "mask" class = "hidden"></div>
+                <section id = "mordal" class = "hidden">
+                    <p style="font-size: 25px">ドライブ交差点マップへようこそ！</p>
+                    <p>このサイトでは経路検索を詳細に見る事が出来ます。</br>出発地と目的地をセットし、そのあと<span style="color:red">経路検索ボタン</span>を押してください。</br>また経路の詳細を知りたいときは、画面右下の<span style="color:blueviolet">詳細結果の表示のボタン</span>を押してください。</br>道順の案内とその地点での地図が表示されます。</p>
+                    <div id = "closed">閉じる</div>
+                </section>
+            </div>
+        </header>
+        <main>
+            <div id = "up_main">
+                <div class = "main_area" id = "gmap"></div>
+                <div class = "main_area" id ="tate">
+                    <div class = "main_area" id = "direction">
+                        <h3>経路検索</h3>
+                        <table>
+                            <tr class = "tr_dire">
+                                <th>出発地</th>
+                                <th><input type="text" id = "start_dir" class="user-place" placeholder= "" value="大阪"></th>
+                                <!-- <th><input type = "button" id = "now_place"  value = "現在地を入力する" onclick="in_nowPlace()"><th> -->
+                            </tr>
+                            <tr>
+                                <td>⬇︎</td>
+                            </tr>
+                            <tr class = "tr_dire">
+                                <th>目的地</th>
+                                <th><input type="text" id = "end_dir" class="user-place"  placeholder= "" value="名古屋"></th>
+                            </tr>
+                        </table>
+                        <p>移動手段</p>
+                        <form id ="tri_way">
+                            <input type = "radio" name = "tri_way" value="DRIVING"　checked>車
+                            <!-- <input type = "radio" name = "tri_way" value="BICYCLING">自転車
+                            <input type = "radio" name = "tri_way" value="TRANSIT">公共交通機関 -->
+                            <input type = "radio" name = "tri_way" value="WALKING">徒歩<br>
+                        </form>
+                        <div id = "scerch_btn">
+                            <input type="button" id = "scrach_direction" value = "経路検索" onclick="disabled = true;scrach_dire()">
+                        </div>
+                        <div id = "scerch_btn">
+                            <input type="button" id = "reset_btn" value = "リセット" onclick="page_reset()">
+                        </div>
+                    </div>
+                    <div class = "main_area" id = "result_btn">
+                        <input type = "button" id = "Id_result"  value = "詳細結果の表示" onclick="disabled = true;result_panel()">
+                    </div>
+                </div>
+            </div>
+            <div id = "res_main">
+                <div id = "summary_area"></div>
+                    <div id = "result_Panel">
+                        <div id = "result_area"></div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <h2>CSSの雛形検証</h2>
+                <div class = "result_ele_high">
+                        <tr data-leg-index="0" data-step-index="11" jstcache="60" jsaction="directionsPanel.selectLegAndStep" jsinstance="11" class="result_ele_high">
+                            <td class="adp-substep">
+                                <div jstcache="61" class="adp-stepicon" style="display:none">
+                                    <div jstcache="62" class="adp-maneuver" jsan="7.adp-maneuver"></div>
+                                </div>
+                            </td>
+                            <td jstcache="63" class="adp-substep" jsan="7.adp-substep">12.</td>
+                            <td jstcache="64" class="adp-substep">
+                                <b>新名神高速道路</b>を進む
+                                <div style="font-size:0.9em">有料区間</div>
+                            </td>
+                            <td class="adp-substep">
+                                <div jstcache="65" class="adp-distance" jsan="7.adp-distance">43.6 km</div>
+                            </td>
+                        </tr>
+                    <hr class = "cl_hr">
+                    <div id = "addmapID" class = "addmap"></div>
+                </div>
+        </footer>
+        <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDG64oCzyrDajPz3qxSJEiCnnPOp8TjeKc&callback=initMap&language=ja" async defer></script>
+        <script src="js/mordal.js"></script>
+    </body>
+</html>
